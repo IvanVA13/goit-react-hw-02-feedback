@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import { Component } from 'react';
 import FeedbackOptions from './Feedback';
 import Statistics from './Statistics';
 import Section from './Section';
@@ -25,7 +25,7 @@ class App extends Component {
     (this.stat.total = good + neutral + bad);
 
   countPositiveFeedbackPercentage = ({ good }) =>
-    this.stat.total ? `${Math.round((good / this.stat.total) * 100)}%` : 0;
+    this.stat.total ? `${Math.round((good / this.stat.total) * 100)}%` : '0';
 
   render() {
     const { good, neutral, bad } = this.state;

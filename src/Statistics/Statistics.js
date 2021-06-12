@@ -1,4 +1,5 @@
 import { Component } from 'react';
+import PropTypes from 'prop-types';
 import Notification from '../Notification';
 import styles from './Statistics.module.scss';
 
@@ -33,4 +34,11 @@ class Statistics extends Component {
     );
   }
 }
+
+Statistics.propTypes = {
+  elStat: PropTypes.arrayOf(PropTypes.string).isRequired,
+  total: PropTypes.number.isRequired,
+  positivePercentage: PropTypes.string.isRequired,
+};
+
 export default Statistics;
