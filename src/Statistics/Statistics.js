@@ -1,15 +1,17 @@
 import { Component } from 'react';
 import PropTypes from 'prop-types';
+import shortid from 'shortid';
 import Notification from '../Notification';
 import styles from './Statistics.module.scss';
 
 class Statistics extends Component {
+  feedbackStatId = () => shortid.generate();
   render() {
     const { elStat, total, positivePercentage } = this.props;
     return total > 0 ? (
       <ul className={styles['stat-list']}>
-        {elStat.map((el, id) => (
-          <li key={id}>
+        {elStat.map(el => (
+          <li key={this.feedbackStatId()}>
             <p className={styles.feedback}>
               {el}
               <span className={styles.value}>{this.props[el]}</span>
