@@ -9,6 +9,10 @@ const Section = ({ title, children }) => (
   </section>
 );
 
+Section.defaultProps = {
+  title: '',
+};
+
 Section.propTypes = {
   title: PropTypes.string,
 };
